@@ -1,13 +1,9 @@
 <template>
-  <div id="app">
-    <!-- <work-app :projectId="10000"></work-app> -->
-    <work-editor :componentGroupList="[]"></work-editor>
-  </div>
+  <router-view></router-view>
 </template>
+
 <script>
-  export default {
-    data() {
-      return {};
-    }
-  };
+  export default {};
 </script>
+
+<style></style>

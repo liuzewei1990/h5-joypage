@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 
-import work from "@work/work";
-Vue.use(work);
+import h5plus from "@work/h5plus";
+Vue.use(h5plus);
 
 // import easytable from "@work/easytable";
 // Vue.use(easytable);

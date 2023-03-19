@@ -1,12 +1,16 @@
 import Vue from "vue";
 import App from "./App.vue";
+import router from "./router/index";
 
-import * as work from "@work/work";
+import work from "./index";
+Vue.use(work);
 
-Vue.use(work.default);
+import workUi from "@work/ui";
+Vue.use(workUi);
 
 Vue.config.productionTip = false;
 
 new Vue({
+  router,
   render: (h) => h(App)
-}).$bootstrap("#app");
+}).$mount("#app");

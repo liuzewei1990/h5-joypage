@@ -1,13 +1,10 @@
 const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
 module.exports = defineConfig({
-  outputDir: path.resolve(__dirname, "../../libs/config/dist"),
+  outputDir: path.resolve(__dirname, "../../libs/work/dist"),
   transpileDependencies: true,
   productionSourceMap: false,
   configureWebpack: {
-    output: {
-      library: "workConfig"
-    },
     plugins: [],
     externals: {
       vue: "Vue",
@@ -42,11 +39,6 @@ module.exports = defineConfig({
         changeOrigin: true
       },
       "/workComponents": {
-        target: "http://192.168.7.19:8080",
-        secure: false,
-        changeOrigin: true
-      },
-      "/workJs": {
         target: "http://192.168.7.19:8080",
         secure: false,
         changeOrigin: true

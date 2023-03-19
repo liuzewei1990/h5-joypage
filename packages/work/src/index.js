@@ -1,44 +1,22 @@
-export { config } from "@work/config";
-export * as service from "@work/service";
-export * as store from "@work/store";
-export * as utils from "@work/utils";
-export * as websocket from "@work/websocket";
-export * as core from "@work/core";
+export { default as Work } from "./components/Work/index.vue";
+export { default as WorkRender } from "./class/work.render.class";
+export { default as WorkEditor } from "./class/work.editor.class";
+export { default as createWork } from "./components/index.js";
+export { renderWork, createWorkPage } from "./components/render.js";
 
-import pkg from "../package.json";
-import chalk from "@alita/chalk";
-import buildTime from "../build-time.js";
-window.alitadebug = true;
-chalk.hello("@work/work", pkg.version);
-if (process.env.NODE_ENV !== "development2222") {
-  chalk.info("@work/work build time: " + buildTime);
-}
-
-import conf, { config } from "@work/config";
-import service from "@work/service";
-import store from "@work/store";
-import utils from "@work/utils";
-import dataCache from "@work/data-cache";
-import websocket from "@work/websocket";
-import core from "@work/core";
+import "flex.css";
+import "./assets/iconfont/iconfont.css";
+import eventbus from "./event-bus/index.js";
 
 const install = function (Vue) {
   if (install.isinstalled) return;
   install.isinstalled = true;
-  Vue.use(conf);
-  Vue.use(service);
-  Vue.use(store);
-  Vue.use(utils);
-  Vue.use(dataCache);
-  Vue.use(websocket, config.websocketUrl, config.websocketConfig);
-  Vue.use(core);
+  // 混入work里组件之间通信插件
+  Vue.mixin(eventbus);
 };
 
 if (process.env.NODE_ENV !== "development" && typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
-export default { install };
 
-// 兼容老版本 后期移除掉
-import * as services from "@work/service";
-window.workBase = { service: services };
+export default { install };

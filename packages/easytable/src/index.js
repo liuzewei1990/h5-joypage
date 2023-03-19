@@ -6,7 +6,6 @@ const VueEasytable = () => import(/* webpackChunkName: "async" */ /* webpackPref
 const install = function (Vue) {
   if (install.isinstalled) return;
   install.isinstalled = true;
-  console.log(222);
   Vue.use(VueEasytable());
 };
 

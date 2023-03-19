@@ -1,14 +1,14 @@
 {
-  "name": "@work/work",
+  "name": "@work/editor",
   "version": "1.0.1",
-  "description": "config封装",
+  "description": "work",
   "author": "Liu zewei <543347844@qq.com>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name work src/index.js"
+    "build": "vue-cli-service build --target lib --name editor src/index.js"
   },
   "dependencies": {
     "flex.css": "^1.1.7",
