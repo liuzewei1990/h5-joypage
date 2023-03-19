@@ -63,13 +63,12 @@
     created() {},
     methods: {
       onBeforeCreate() {
-        this.$children[0].$options.props["__observerData"] = object().def({});
+        // 给业务组件自动注入__observerData props
+        if (this.$children[0] && this.$children[0].$options.props) {
+          this.$children[0].$options.props["__observerData"] = object().def({});
+        }
       },
-      onCreated() {
-        // this.$children[0].props["aaaaaa"] = object().def();
-
-        console.log(this.$children[0], 999);
-      },
+      onCreated() {},
       onMounted() {
         // 在舞台中新增组件时，并且组件加载完毕后，自动设置组件的高度为grid-item高度
         if (this.item._new_) this.autoSetHeight();

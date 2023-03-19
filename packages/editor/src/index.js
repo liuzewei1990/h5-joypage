@@ -4,6 +4,13 @@ import Editor from "./Editor.vue";
 import $mount from "./$mount.js";
 
 import "flex.css";
+import dd from "./assets/iconfont/iconfont.js";
+import "./assets/iconfont/iconfont.css";
+import { Icon } from "ant-design-vue";
+const MyIcon = Icon.createFromIconfontCN({
+  scriptUrl: dd, // 在 iconfont.cn 上生成
+  extraCommonProps: { style: { fontSize: "16px" } }
+});
 
 const install = function (Vue) {
   if (install.isinstalled) return;
@@ -14,6 +21,7 @@ const install = function (Vue) {
   Vue.use(workUi);
   // 注册全局编辑器组件
   Vue.component(Editor.name, Editor);
+  Vue.component("icon-font", MyIcon);
   // $bootstrap 挂载实例
   Vue.prototype.$bootstrap = $mount;
 };

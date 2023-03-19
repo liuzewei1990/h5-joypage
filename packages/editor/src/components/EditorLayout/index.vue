@@ -35,7 +35,7 @@
     height: 56px;
     line-height: 56px;
     padding: 0;
-    background: #f8f8f8;
+    background: #ffffff;
     border-bottom: 1px solid #e6e6e6;
   }
   .layout-sider {

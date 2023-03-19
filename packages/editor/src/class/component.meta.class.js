@@ -11,20 +11,25 @@ class ComponentMeta extends App {
           name: "基础",
           componentGroupList: [
             {
-              title: "示例容器",
+              title: "导航类",
               items: [
                 {
-                  icon: "http://api.hedpy.cn:8080/comps/assets/images/tabs.png",
+                  icon: require("./meta-images/tabs.png"),
                   text: "导航",
                   coName: "WorkTabs"
-                },
+                }
+              ]
+            },
+            {
+              title: "媒体类",
+              items: [
                 {
-                  icon: "",
+                  icon: require("./meta-images/img.png"),
                   text: "矩形",
                   coName: "WorkRectComponent"
                 },
                 {
-                  icon: "",
+                  icon: require("./meta-images/shape1.png"),
                   text: "图片",
                   coName: "WorkImage"
                 }

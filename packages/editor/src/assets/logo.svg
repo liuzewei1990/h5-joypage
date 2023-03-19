@@ -1,0 +1,135 @@
+
+          <svg
+            data-v-70b83f88=""
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="109"
+            height="109"
+            preserveAspectRatio="xMidYMid meet"
+            color-interpolation-filters="sRGB"
+            style="margin: auto">
+            <rect data-v-70b83f88="" x="0" y="0" width="100%" height="100%" fill="#ffffff" fill-opacity="0" class="background"></rect>
+            <rect data-v-70b83f88="" x="0" y="0" width="100%" height="100%" fill="url(#watermark)" fill-opacity="1" class="watermarklayer"></rect>
+            <g data-v-70b83f88="" fill="#383c93" class="icon-text-wrapper icon-svg-group iconsvg">
+              <g fill="#383c93" class="iconsvg-imagesvg icon_container" transform="matrix(1,0,0,1,0,0)" opacity="1">
+                <svg viewBox="0 0 60 60" x="0" y="0" width="109" height="109" class="image-svg-svg bn" style="overflow: visible">
+                  <g hollow-target="iconBnFill" mask="url(#e6d39164-4c5c-407c-a04e-24b8cec15c80)">
+                    <g>
+                      <svg
+                        fill="#000000"
+                        xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
+                        xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
+                        xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1"
+                        x="0"
+                        y="0"
+                        viewBox="5 5 90 90"
+                        style="overflow: visible"
+                        xml:space="preserve"
+                        width="60"
+                        height="60"
+                        filtersec="colorsf7562833415"
+                        filter="url(#KS47AhlYZGJl4wErtQmFT)">
+                        <g transform="scale(1, 1) skewX(0)">
+                          <g>
+                            <g i:extraneous="self"><path d="M50,5L5,50l45,45l45-45L50,5z"></path></g>
+                          </g>
+                        </g>
+                        <defs>
+                          <filter id="KS47AhlYZGJl4wErtQmFT"><feColorMatrix type="matrix" values="0 0 0 0 0.21875  0 0 0 0 0.234375  0 0 0 0 0.57421875  0 0 0 1 0"></feColorMatrix></filter>
+                        </defs>
+                      </svg>
+                    </g>
+                    <g filter="url(#colors7341596222)">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 67.68000000000002 48.02400000000001"
+                        width="45"
+                        height="45"
+                        x="7.5"
+                        y="7.5"
+                        class="image-svg-letter">
+                        <path
+                          transform="translate(-4.896000000000001 48.02400000000001)"
+                          d="M33.70-48.02L43.85-48.02L43.85 0L33.70 0L33.70-19.87L15.12-19.87L15.12 0L4.90 0L4.90-48.02L15.12-48.02L15.12-28.44L33.70-28.44L33.70-48.02ZM30.53-48.02L69.98-48.02L69.98-39.46L40.68-39.46L40.68-28.51L55.94-28.51Q60.41-28.51 63.04-27.94Q65.66-27.36 67.54-25.92L67.54-25.92Q72.58-22.10 72.58-14.76L72.58-14.76Q72.58-5.47 64.80-1.87L64.80-1.87Q60.70 0 51.55 0L51.55 0L30.53 0L30.53-8.50L51.55-8.50Q55.87-8.50 58.18-9.22L58.18-9.22Q59.62-9.72 60.44-11.05Q61.27-12.38 61.27-14.18L61.27-14.18Q61.27-16.20 60.34-17.68Q59.40-19.15 57.89-19.58L57.89-19.58Q56.66-19.94 51.55-20.02L51.55-20.02L30.53-20.02L30.53-48.02Z"></path>
+                      </svg>
+                    </g>
+                  </g>
+                  <mask id="e6d39164-4c5c-407c-a04e-24b8cec15c80">
+                    <g fill="white">
+                      <svg
+                        xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
+                        xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
+                        xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1"
+                        x="0"
+                        y="0"
+                        viewBox="5 5 90 90"
+                        style="overflow: visible"
+                        xml:space="preserve"
+                        width="60"
+                        height="60"
+                        filtersec="colorsf7562833415">
+                        <g transform="scale(1, 1) skewX(0)">
+                          <g>
+                            <g i:extraneous="self"><path d="M50,5L5,50l45,45l45-45L50,5z"></path></g>
+                          </g>
+                        </g>
+                        <defs></defs>
+                      </svg>
+                    </g>
+                    <g fill="black">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 67.68000000000002 48.02400000000001"
+                        width="45"
+                        height="45"
+                        x="7.5"
+                        y="7.5"
+                        class="image-svg-letter">
+                        <path
+                          transform="translate(-4.896000000000001 48.02400000000001)"
+                          d="M33.70-48.02L43.85-48.02L43.85 0L33.70 0L33.70-19.87L15.12-19.87L15.12 0L4.90 0L4.90-48.02L15.12-48.02L15.12-28.44L33.70-28.44L33.70-48.02ZM30.53-48.02L69.98-48.02L69.98-39.46L40.68-39.46L40.68-28.51L55.94-28.51Q60.41-28.51 63.04-27.94Q65.66-27.36 67.54-25.92L67.54-25.92Q72.58-22.10 72.58-14.76L72.58-14.76Q72.58-5.47 64.80-1.87L64.80-1.87Q60.70 0 51.55 0L51.55 0L30.53 0L30.53-8.50L51.55-8.50Q55.87-8.50 58.18-9.22L58.18-9.22Q59.62-9.72 60.44-11.05Q61.27-12.38 61.27-14.18L61.27-14.18Q61.27-16.20 60.34-17.68Q59.40-19.15 57.89-19.58L57.89-19.58Q56.66-19.94 51.55-20.02L51.55-20.02L30.53-20.02L30.53-48.02Z"></path>
+                      </svg>
+                    </g>
+                  </mask>
+                </svg>
+                <defs>
+                  <filter id="colors7341596222">
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.21875  0 0 0 0 0.234375  0 0 0 0 0.57421875  0 0 0 1 0" class="icon-fecolormatrix"></feColorMatrix>
+                  </filter>
+                  <filter id="colorsf7562833415">
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 1 0" class="icon-fecolormatrix"></feColorMatrix>
+                  </filter>
+                  <filter id="colorsb4185296377"><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" class="icon-fecolormatrix"></feColorMatrix></filter>
+                </defs>
+              </g>
+              <g transform="translate(53.875,116)">
+                <g data-gra="path-name" fill-rule="" class="tp-name iconsvg-namesvg" opacity="1" transform="matrix(1,0,0,1,0,0)">
+                  <g transform="scale(1)">
+                    <g>
+                      <path
+                        d="M0.47-0.67L0.61-0.67 0.61 0 0.47 0 0.47-0.28 0.21-0.28 0.21 0 0.07 0 0.07-0.67 0.21-0.67 0.21-0.4 0.47-0.4 0.47-0.67ZM0.73-0.67L1.28-0.67 1.28-0.55 0.88-0.55 0.88-0.4 1.09-0.4Q1.15-0.4 1.19-0.39 1.22-0.38 1.25-0.36L1.25-0.36Q1.32-0.31 1.32-0.21L1.32-0.21Q1.32-0.08 1.21-0.03L1.21-0.03Q1.15 0 1.03 0L1.03 0 0.73 0 0.73-0.12 1.03-0.12Q1.09-0.12 1.12-0.13L1.12-0.13Q1.14-0.14 1.15-0.15 1.16-0.17 1.16-0.2L1.16-0.2Q1.16-0.23 1.15-0.25 1.14-0.27 1.11-0.27L1.11-0.27Q1.1-0.28 1.03-0.28L1.03-0.28 0.73-0.28 0.73-0.67Z"
+                        transform="translate(-0.07000000774860382, 0.6700000166893005)"></path>
+                    </g>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </g>
+                </g>
+                <!---->
+              </g>
+            </g>
+            <defs v-gra="od"></defs>
+          </svg>
