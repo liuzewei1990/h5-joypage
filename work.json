@@ -1,0 +1,96 @@
+{
+  "root": {
+    "type": "object",
+    "title": "页面json",
+    "properties": {
+      "workId": {
+        "type": "number",
+        "title": "作品ID"
+      },
+      "workMode": {
+        "type": "string",
+        "title": "作品模式（类型）"
+      },
+      "title": {
+        "type": "string",
+        "title": "页面标题"
+      },
+      "width": {
+        "type": "string",
+        "title": "根节点宽"
+      },
+      "height": {
+        "type": "string",
+        "title": "根节点高"
+      },
+      "coverImg": {
+        "type": "string",
+        "title": "页面背景"
+      },
+      "viewIndex": {
+        "type": "string",
+        "title": "渲染哪个tabs视图,后续通过组件按钮交互控制"
+      },
+      "views": {
+        "type": "array",
+        "title": "页面tabs视图",
+        "items": {
+          "type": "object",
+          "properties": {
+            "viewId": {
+              "type": "string",
+              "title": "视图ID"
+            },
+            "title": {
+              "type": "string",
+              "title": "视图标题"
+            },
+            "elements": {
+              "type": "array",
+              "title": "视图中的元素（每个元素代表一个组件）",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eleId": {
+                    "type": "string",
+                    "title": "元素ID（容器）"
+                  },
+                  "elStyle": {
+                    "type": "object",
+                    "title": "元素样式"
+                  },
+                  "coName": {
+                    "type": "string",
+                    "title": "要渲染的组件名字"
+                  },
+                  "coProps": {
+                    "type": "object",
+                    "title": "组件默认props"
+                  },
+                  "coEvents": {
+                    "type": "array",
+                    "title": "组件事件列表",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "coMethods": {
+                    "type": "array",
+                    "title": "组件方法列表",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "coType": {
+                    "type": "string",
+                    "title": "组件类型, vue组件 | web component组件 | work组件"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

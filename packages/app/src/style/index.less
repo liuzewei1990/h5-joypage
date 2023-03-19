@@ -1,0 +1,99 @@
+#admin-layout-side {
+  .app-slider {
+  }
+
+  .app-container {
+    // height: 100vh;
+    // overflow: hidden;
+    background: #edf0f8;
+  }
+
+  .app-header {
+    background: #fff;
+  }
+
+  .app-content {
+    // background: pink;
+    // overflow-x: hidden;
+    // overflow-y: auto;
+    // width: calc(100% + 16px);
+  }
+
+  .app-footer {
+  }
+
+  .header-treme-dark {
+    background: #001528;
+  }
+  .header-treme-light {
+    background: #fff;
+  }
+
+  .base-header .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .base-header .trigger:hover {
+    color: #1890ff;
+  }
+
+  .base-content {
+    padding: 20px 20px 0;
+    // margin-top: 40px;
+
+    // box-sizing: border-box;
+    position: relative;
+    // width: calc(100% - 10px);
+    // border: 1px solid #ddd;
+    // border-radius: 5px;
+    // box-shadow: 0px 0px 10px rgb(212, 212, 212);
+  }
+
+  .fixed-wide {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .fix-header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+  }
+  .fix-header-content-top {
+    margin-top: 64px;
+  }
+
+  .fix-sider {
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    overflow: auto;
+    height: 100vh;
+  }
+
+  .logo {
+    height: 64px;
+    padding-left: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+    // background: #001529;
+    display: flex;
+    align-items: center;
+    img {
+      height: 32px;
+      width: 32px;
+    }
+    h1 {
+      color: #fff;
+      font-size: 20px;
+      margin: 0 0 0 12px;
+      font-weight: 600;
+      // 强制不换行 解决collapsed收缩时，出现丑陋的换行闪现问题
+      white-space: nowrap;
+    }
+  }
+}
