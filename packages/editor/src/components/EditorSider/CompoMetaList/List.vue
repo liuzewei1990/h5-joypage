@@ -62,11 +62,11 @@
       overflow: hidden;
       box-shadow: 0px 0px 10px #ececec;
       cursor: pointer;
-      outline: 2px solid #dcdcdc;
+      outline: 2px solid @joy-border-color;
       margin-bottom: 10px;
 
       &:hover {
-        outline: 2px solid #3358e3;
+        outline: 2px solid @primary-color;
       }
 
       .img {

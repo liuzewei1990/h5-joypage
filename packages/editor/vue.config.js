@@ -1,7 +1,7 @@
 const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
 module.exports = defineConfig({
-  outputDir: path.resolve(__dirname, "../../libs/core/dist"),
+  outputDir: path.resolve(__dirname, "../../libs/editor/dist"),
   transpileDependencies: true,
   productionSourceMap: false,
   configureWebpack: {

@@ -7,6 +7,12 @@ function resolve(dir) {
 }
 
 const vueConfig = {
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "less",
+      patterns: [path.resolve(__dirname, "theme.less")] // 引入全局样式变量
+    }
+  },
   configureWebpack: (config) => {
     config.externals = {
       vue: "Vue",
@@ -25,6 +31,12 @@ const vueConfig = {
     loaderOptions: {
       less: {
         lessOptions: {
+          // modifyVars: {
+          //   "primary-color": "#FF5F70",
+          //   "link-color": "#FF5F70",
+          //   "font-size-base": "12px",
+          //   "border-radius-base": "0px"
+          // },
           javascriptEnabled: true
         }
       }

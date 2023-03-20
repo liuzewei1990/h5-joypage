@@ -1,7 +1,7 @@
 const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
 module.exports = defineConfig({
-  outputDir: path.resolve(__dirname, "../../libs/work/dist"),
+  outputDir: path.resolve(__dirname, "../../libs/h5plus/dist"),
   transpileDependencies: true,
   productionSourceMap: false,
   configureWebpack: {

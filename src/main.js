@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import "/antd-theme.less";
 
 import h5plus from "@work/h5plus";
 Vue.use(h5plus);
