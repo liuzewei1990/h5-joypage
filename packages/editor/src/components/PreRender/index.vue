@@ -7,7 +7,7 @@
     width="100%"
     :footer="null"
     @cancel="hideModal"
-    :bodyStyle="{ padding: '10px', height: 'calc(100vh - 55.5px)', minWidth: '1000px' }">
+    :bodyStyle="{ padding: '0px', background: '#edf0f8', height: 'calc(100vh - 55.5px)', minWidth: '1000px' }">
     <div slot="title" flex="cross:center">
       <!-- <span style="margin-right: 10px">预览内容</span> -->
       <div flex-box="1"></div>
@@ -23,7 +23,7 @@
       <div flex-box="1"></div>
       <div style="width: 50px"></div>
     </div>
-    <render :switchVal="switchVal" height="calc(100vh - 55.5px - 20px)"></render>
+    <render :switchVal="switchVal" height="calc(100vh - 55.5px)"></render>
   </a-modal>
 </template>
 <script>

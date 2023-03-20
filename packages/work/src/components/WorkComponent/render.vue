@@ -20,11 +20,11 @@
 <script>
   import Vue from "vue";
   import { number, object, string } from "vue-types";
-  import { Empty } from "ant-design-vue";
+  // import { Empty } from "ant-design-vue";
 
   export default {
     inheritAttrs: true,
-    components: { Empty },
+    // components: { Empty },
     inject: ["work"],
     provide() {
       const workApi = {

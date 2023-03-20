@@ -1,14 +1,9 @@
 <template>
   <!-- 表示页面中的一个视图 -->
-  <section class="work-view" v-bind="$attrs" :style="{ height: height }">
+  <section class="work-view" v-bind="$attrs" :style="style">
     <!-- {{ work.mode }} -->
     <!-- {{ work.isHasMode(["dev", "edit"]) }} -->
-    <grid-layout
-      :class="{ grid: work.isHasMode(['dev', 'edit']) }"
-      :mode="mode"
-      :layout.sync="layouts"
-      :row-height="rowHeight"
-      :style="{ minHeight: height, '--grid': `calc(calc(100% - 0px) / 144) ${rowHeight}px` }">
+    <grid-layout :class="{ grid: work.isHasMode(['dev', 'edit']) }" :mode="mode" :layout.sync="layouts" :row-height="rowHeight" :style="gridLayoutStyle">
       <component :is="componentName" v-for="(item, index) in layouts" :key="item.i" :item="item" :index="index"></component>
     </grid-layout>
   </section>
@@ -29,7 +24,7 @@
   };
   export default {
     components: { GridLayout, ...modeComponentMap },
-    inject: ["work"],
+    inject: ["work", "$Work"],
     props: {
       viewIndex: number().def(0),
       height: string().def("")
@@ -46,20 +41,40 @@
       },
       layouts({ workModel } = state) {
         return this.views[this.viewIndex].elements || [];
+      },
+      gridLayoutStyle() {
+        return {
+          // grid-layout高度 = 用work-view的高度 - work-view的padding-top - work-view的padding-bottom
+          minHeight: `calc(${this.style.height} - ${this.padding.top}px - ${this.padding.bottom}px)`,
+          "--grid": `calc(calc(100% - 0px) / 144) ${this.rowHeight}px`
+        };
+      },
+      style() {
+        return {
+          padding: `${this.padding.top}px ${this.padding.right}px ${this.padding.bottom}px ${this.padding.left}px`,
+          // work-view 高度计算 = 用父级work的高度 - 父级work的padding-top - 父级work的padding-bottom
+          height: `calc(${this.height} - ${this.$Work.padding.top}px - ${this.$Work.padding.bottom}px)`
+        };
       }
     },
     data() {
       return {
+        padding: {
+          top: "10",
+          bottom: "0",
+          left: "10",
+          right: "10"
+        },
         // 给grid-layout网格的可视区域分配1000行
         rowNum: 100,
-        rowHeight: 1
+        rowHeight: 10
       };
     },
     mounted() {
       // this.rowNum = this.$el.clientHeight;
       const erd = elementResizeDetectorMaker();
       erd.listenTo(this.$el, () => {
-        // this.rowHeight = this.$el.clientHeight / this.rowNum;
+        this.rowHeight = this.$el.clientHeight / this.rowNum;
       });
     },
     deactivated() {
@@ -78,11 +93,12 @@
     // border: 1px solid red;
 
     &::-webkit-scrollbar {
-      width: 0px;
+      width: 6px;
+      background: #e4e4e4;
     }
     /* 滚动条的滑块 */
     &::-webkit-scrollbar-thumb {
-      background-color: #9c9c9c30;
+      background-color: #cecece;
       border-radius: 3px;
       box-shadow: none;
     }

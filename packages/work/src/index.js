@@ -3,6 +3,7 @@ export { default as WorkRender } from "./class/work.render.class";
 export { default as WorkEditor } from "./class/work.editor.class";
 export { default as createWork } from "./components/index.js";
 export { renderWork, createWorkPage } from "./components/render.js";
+export * as apis from "./api/index.js";
 
 import "flex.css";
 import "./assets/iconfont/iconfont.css";

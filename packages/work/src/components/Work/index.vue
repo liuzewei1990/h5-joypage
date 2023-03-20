@@ -1,10 +1,10 @@
 <template>
   <!-- 表示路由页面根节点 -->
-  <section class="work">
+  <section class="work" :style="style">
     <!-- {{ $attrs }} -->
     <a-config-provider :locale="locale">
       <!-- <keep-alive> -->
-      <work-view :height="height" v-for="(item, index) in views" :key="item.viewId || index" :viewIndex="index" v-if="currViewIndex === index"></work-view>
+      <work-view :height="style.height" v-for="(item, index) in views" :key="item.viewId || index" :viewIndex="index" v-if="currViewIndex === index"></work-view>
       <!-- </keep-alive> -->
     </a-config-provider>
   </section>
@@ -20,6 +20,11 @@
     components: { WorkView },
     props: {
       height: string().def("")
+    },
+    provide() {
+      return {
+        $Work: this
+      };
     },
     inject: ["work"],
     async created() {
@@ -39,11 +44,23 @@
       },
       tabs() {
         return this.views.map((item) => ({ name: item.title }));
+      },
+      style() {
+        return {
+          padding: `${this.padding.top}px ${this.padding.right}px ${this.padding.bottom}px ${this.padding.left}px`,
+          height: this.height
+        };
       }
     },
     data() {
       return {
-        locale: zhCN
+        locale: zhCN,
+        padding: {
+          top: "10",
+          bottom: "0",
+          left: "10",
+          right: "10"
+        }
       };
     }
   };

@@ -1,7 +1,7 @@
 <template>
   <div class="canvas">
     <!-- <work-page> -->
-    <work height="calc(100vh - 56px - 5px)" />
+    <work height="calc(100vh - 56px)" />
     <!-- </work-page> -->
   </div>
 </template>
@@ -16,8 +16,8 @@
 
 <style lang="less" scoped>
   .canvas {
-    padding: 5px 5px 0;
+    // padding: 5px 5px 0;
     background: #edf0f8;
-    height: calc(100vh - 56px - 5px);
+    height: calc(100vh - 56px);
   }
 </style>

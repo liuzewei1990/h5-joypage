@@ -109,7 +109,7 @@
   .vue-grid-item:not(.vue-grid-placeholder) {
     position: relative;
     touch-action: none;
-    // background: #edf0f8;
+    background: #edf0f8; // 暂时写死 以后改成配置
     // overflow: hidden;
     // box-shadow: 0px 0px 3px rgb(229, 229, 229);
 
