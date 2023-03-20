@@ -16,9 +16,9 @@ async function bootstrap() {
     render: (h) => h(App)
   });
 
-  const appId = location.href.split("#/")[1].split("/")[0];
-  await loadAppConfig("10001");
-  app.$bootstrap("#app");
+  const appId = location.href.split("#/")[1]?.split("/")[0];
+  await loadAppConfig("energy-test");
+  app.$mount("#app");
 }
 
 bootstrap();

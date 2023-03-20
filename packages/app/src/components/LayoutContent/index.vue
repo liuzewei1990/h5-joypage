@@ -1,7 +1,7 @@
 <template>
-  <a-layout-content class="app-content" :class="classNames">
-    <nav-bar v-if="visibleTabs"></nav-bar>
-    <BaseContent><slot></slot></BaseContent>
+  <a-layout-content class="app-content" flex="dir:top" :class="classNames">
+    <nav-bar flex-box="0" v-if="visibleTabs"></nav-bar>
+    <BaseContent flex-box="1" style="height: 1px"><slot></slot></BaseContent>
   </a-layout-content>
 </template>
 
