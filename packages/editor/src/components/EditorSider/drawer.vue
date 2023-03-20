@@ -3,7 +3,7 @@
     placement="left"
     :closable="false"
     :mask="true"
-    :visible="visible"
+    :visible="true"
     :get-container="false"
     :drawer-style="{}"
     :mask-style="{ backgroundColor: 'rgba(0, 0, 0, 0)' }"
@@ -22,13 +22,17 @@
 </template>
 
 <script>
+  import MyHome from "./MyHome/index.vue";
+  import PageSetting from "./PageSetting/index.vue";
   import ViewMetaList from "./ViewMetaList/index.vue";
-  import CompoMetaList from "./CompoMetaList/index.vue";
-  import CompoMetaListLocal from "./CompoMetaListLocal/index.vue";
+  import ComponentMeta from "./ComponentMeta/index.vue";
+  import ComponentMetaDev from "./ComponentMetaDev/index.vue";
+  import DataBase from "./DataBase/index.vue";
+  import Setting from "./Setting/index.vue";
   import store from "./store.js";
 
   export default {
-    components: { ViewMetaList, CompoMetaList, CompoMetaListLocal },
+    components: { MyHome, PageSetting, ViewMetaList, ComponentMeta, DataBase, ComponentMetaDev, Setting },
     computed: {
       visible() {
         return store.state.visible;

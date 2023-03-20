@@ -2,16 +2,16 @@
   <!-- 表示路由页面根节点 -->
   <section class="work" :style="style">
     <!-- {{ $attrs }} -->
-    <a-config-provider :locale="locale">
-      <!-- <keep-alive> -->
-      <work-view :height="style.height" v-for="(item, index) in views" :key="item.viewId || index" :viewIndex="index" v-if="currViewIndex === index"></work-view>
-      <!-- </keep-alive> -->
-    </a-config-provider>
+    <!-- <a-config-provider :locale="locale"> -->
+    <!-- <keep-alive> -->
+    <work-view :height="style.height" v-for="(item, index) in views" :key="item.viewId || index" :viewIndex="index" v-if="currViewIndex === index"></work-view>
+    <!-- </keep-alive> -->
+    <!-- </a-config-provider> -->
   </section>
 </template>
 
 <script>
-  import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
+  // import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
   import WorkView from "../WorkView";
   import WorkBase from "../../class/work.base.class";
   import { string } from "vue-types";
@@ -54,7 +54,7 @@
     },
     data() {
       return {
-        locale: zhCN,
+        // locale: zhCN,
         padding: {
           top: "10",
           bottom: "0",

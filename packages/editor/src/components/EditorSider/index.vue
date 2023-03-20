@@ -1,57 +1,48 @@
 <template>
   <div class="menu-sider">
-    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('view-meta-list1')">
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('my-home')">
       <div class="icon" flex="cross:center main:center">
         <!-- <span class="iconfont icon-home"></span> -->
         <icon-font type="icon-home" />
       </div>
       <div class="name">我的</div>
     </div>
-    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('view-meta-list')">
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('page-setting')">
       <div class="icon" flex="cross:center main:center">
         <span class="iconfont icon-yemian2"></span>
       </div>
+      <div class="name">页面</div>
+    </div>
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('view-meta-list')">
+      <div class="icon" flex="cross:center main:center">
+        <span class="iconfont icon-zujian"></span>
+      </div>
       <div class="name">视图</div>
     </div>
-    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('compo-meta-list')">
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('component-meta')">
       <div class="icon" flex="cross:center main:center">
         <span class="iconfont icon-pingtai_mokuai"></span>
       </div>
       <div class="name">组件</div>
     </div>
-    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('compo-meta-li1st')">
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('data-base')">
       <div class="icon" flex="cross:center main:center">
         <span class="iconfont icon-database"></span>
       </div>
       <div class="name">数据</div>
     </div>
-
-    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('compo-meta-list-local')" v-if="mode === 'dev'">
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('component-meta-dev')" v-if="mode === 'dev'">
       <div class="icon" flex="cross:center main:center">
         <span class="iconfont icon-dev"></span>
       </div>
       <div class="name">开发</div>
     </div>
-
-    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('compo-meta-list-lo1cal')">
+    <div class="item" flex="dir:top cross:center main:center" @click="openCommonDrawer('setting')">
       <div class="icon" flex="cross:center main:center">
         <span class="iconfont icon-shezhi1"></span>
       </div>
       <div class="name">设置</div>
     </div>
-
-    <!-- <div class="item" flex="dir:top cross:center main:center" @click="$emit('itemClick', 'co')">
-      <div class="icon" flex="cross:center main:center">
-        <a-icon type="plus-circle" />
-      </div>
-      <div class="name">组件</div>
-    </div>
-    <div class="item" flex="dir:top cross:center main:center" @click="$emit('itemClick', 'co')">
-      <div class="icon" flex="cross:center main:center">
-        <a-icon type="plus-circle" />
-      </div>
-      <div class="name">页面</div>
-    </div> -->
   </div>
 </template>
 
