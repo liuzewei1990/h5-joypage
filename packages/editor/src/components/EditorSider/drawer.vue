@@ -2,8 +2,8 @@
   <a-drawer
     placement="left"
     :closable="false"
-    :mask="true"
-    :visible="true"
+    :mask="false"
+    :visible="visible"
     :get-container="false"
     :drawer-style="{}"
     :mask-style="{ backgroundColor: 'rgba(0, 0, 0, 0)' }"
@@ -33,6 +33,16 @@
 
   export default {
     components: { MyHome, PageSetting, ViewMetaList, ComponentMeta, DataBase, ComponentMetaDev, Setting },
+    on: {
+      ["全局事件-网格项目-点击"]() {
+        console.log(3333);
+        store.close();
+      },
+
+      ["全局事件-Canvas画板-点击"]() {
+        store.close();
+      }
+    },
     computed: {
       visible() {
         return store.state.visible;

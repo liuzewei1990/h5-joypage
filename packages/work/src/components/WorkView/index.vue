@@ -1,6 +1,7 @@
 <template>
   <!-- 表示页面中的一个视图 -->
-  <section class="work-view" v-bind="$attrs" :style="style">
+  <section class="work-view" v-bind="$attrs" :style="style" @click.self="clickSelf">
+    <!-- {{ rowHeight }} -->
     <!-- {{ work.mode }} -->
     <!-- {{ work.isHasMode(["dev", "edit"]) }} -->
     <grid-layout :class="{ grid: work.isHasMode(['dev', 'edit']) }" :mode="mode" :layout.sync="layouts" :row-height="rowHeight" :style="gridLayoutStyle">
@@ -10,7 +11,6 @@
 </template>
 
 <script>
-  import elementResizeDetectorMaker from "element-resize-detector";
   import { object, oneOfType, string, number } from "vue-types";
   import GridLayout from "../GridLayout/index.vue";
   import EditWorkComponent from "../WorkComponent/index.edit.vue";
@@ -27,6 +27,7 @@
     inject: ["work", "$Work"],
     props: {
       viewIndex: number().def(0),
+      rowHeight: number().def(1),
       height: string().def("")
     },
     computed: {
@@ -64,24 +65,20 @@
           bottom: "0",
           left: "10",
           right: "10"
-        },
-        // 给grid-layout网格的可视区域分配1000行
-        rowNum: 100,
-        rowHeight: 10
+        }
       };
     },
-    mounted() {
-      // this.rowNum = this.$el.clientHeight;
-      const erd = elementResizeDetectorMaker();
-      erd.listenTo(this.$el, () => {
-        this.rowHeight = this.$el.clientHeight / this.rowNum;
-      });
+
+    methods: {
+      clickSelf(e) {
+        // console.log(e.target);
+      }
     },
     deactivated() {
-      this.work.removeAllListeners();
+      // this.work.removeAllListeners();
     },
     destroyed() {
-      this.work.removeAllListeners();
+      // this.work.removeAllListeners();
     }
   };
 </script>
@@ -116,6 +113,7 @@
     }
 
     .grid::before {
+      pointer-events: none;
       content: "";
       background-size: var(--grid);
       background-image: linear-gradient(to right, lightgrey 0px, transparent 1px), linear-gradient(to bottom, lightgrey 0px, transparent 1px);

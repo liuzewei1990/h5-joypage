@@ -16,6 +16,7 @@
     :width-scale.sync="item.wsca"
     :is-derailed="item.isDerailed"
     ref="GridItem"
+    @click.native="clickSelf"
     @resize="resizeEvent"
     @resized="resizedEvent"
     @move="moveEvent"
@@ -72,6 +73,9 @@
       }, 0);
     },
     methods: {
+      clickSelf(e) {
+        this.work.emit("全局事件-网格项目-点击");
+      },
       hookCreated() {
         // console.log("this.item.fixedHeight :>> ", this.item.fixedHeight);
         if (this.item.fixedHeight) {

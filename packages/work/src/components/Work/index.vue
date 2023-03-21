@@ -1,10 +1,10 @@
 <template>
   <!-- 表示路由页面根节点 -->
-  <section class="work" :style="style">
-    <!-- {{ $attrs }} -->
+  <section class="work" :style="style" @click.self="clickSelf">
+    <!-- {{ rowHeight }} -->
     <!-- <a-config-provider :locale="locale"> -->
     <!-- <keep-alive> -->
-    <work-view :height="style.height" v-for="(item, index) in views" :key="item.viewId || index" :viewIndex="index" v-if="currViewIndex === index"></work-view>
+    <work-view :height="style.height" v-for="(item, index) in views" :key="item.viewId || index" :viewIndex="index" :rowHeight="rowHeight" v-if="currViewIndex === index"></work-view>
     <!-- </keep-alive> -->
     <!-- </a-config-provider> -->
   </section>
@@ -12,12 +12,14 @@
 
 <script>
   // import zhCN from "ant-design-vue/lib/locale-provider/zh_CN";
+  import elementResizeDetectorMaker from "element-resize-detector";
   import WorkView from "../WorkView";
   import WorkBase from "../../class/work.base.class";
   import { string } from "vue-types";
 
   export default {
     components: { WorkView },
+    inject: ["work"],
     props: {
       height: string().def("")
     },
@@ -25,12 +27,6 @@
       return {
         $Work: this
       };
-    },
-    inject: ["work"],
-    async created() {
-      if (this.work instanceof WorkBase === false) {
-        throw new Error('注意：inject: ["work"] 不属于 WorkBase 的实例');
-      }
     },
     computed: {
       activeViewId() {
@@ -60,8 +56,31 @@
           bottom: "0",
           left: "10",
           right: "10"
-        }
+        },
+        // 给grid-layout网格的可视区域分配1000行
+        rowNum: 100,
+        rowHeight: 1
       };
+    },
+    async created() {
+      if (this.work instanceof WorkBase === false) {
+        throw new Error('注意：inject: ["work"] 不属于 WorkBase 的实例');
+      }
+    },
+    mounted() {
+      // this.rowNum = this.$el.clientHeight;
+
+      this.rowHeight = this.$el.clientHeight / this.rowNum;
+      const erd = elementResizeDetectorMaker();
+      erd.listenTo(this.$el, () => {
+        console.log(55544);
+        this.rowHeight = this.$el.clientHeight / this.rowNum;
+      });
+    },
+    methods: {
+      clickSelf(e) {
+        // console.log(e.target);
+      }
     }
   };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <grid-item :item="item" :static="item.static" :isResizable="item.fixedHeight ? false : item.isResizable" @click.native="showTools">
+  <grid-item :item="item" :static="item.static" :isResizable="item.fixedHeight ? false : item.isResizable" @click.native="showEdit">
     <template v-slot="scope">
       <!-- grid-item 中的 v-if="loaded"，可以解决已经存在keep-alive的component组件，二次挂载时created和activated同时执行的问题 -->
       <!-- <keep-alive> -->
@@ -27,6 +27,11 @@
   export default {
     name: "WorkViewComponent",
     components: { GridItem, Container, Tools, RenderComponent, ToolBar },
+    on: {
+      ["全局事件-Canvas画板-点击"]() {
+        this.closeEdit();
+      }
+    },
     inject: ["work"],
     props: {
       item: object().def({}),
@@ -46,8 +51,11 @@
       }
     },
     methods: {
-      showTools() {
-        this.work.resizableOpen(this.item.i);
+      showEdit() {
+        this.work.resizableOpen(this.item.i, true);
+      },
+      closeEdit() {
+        this.work.resizableOpen(this.item.i, false);
       }
     }
   };

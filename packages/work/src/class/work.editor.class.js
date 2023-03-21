@@ -88,11 +88,11 @@ export default class WorkEditor extends WorkBase {
   }
 
   // 将一个workComponent 改为编辑状态
-  resizableOpen(i) {
+  resizableOpen(i, flag = true) {
     const currView = this.getCurrWorkView();
     this.resizableCloseAll();
     let workComponent = currView.elements.find((item) => item.i === i);
-    workComponent.isResizable = true;
+    workComponent.isResizable = flag;
   }
 
   // 将所有worlComponent 复位编辑状态

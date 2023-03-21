@@ -1,6 +1,7 @@
 <template>
   <grid-layout
     ref="gridLayout"
+    @click.native.self="clickSelf"
     @layout-ready="layoutReadyEvent"
     :col-num="144"
     :max-rows="Infinity"
@@ -30,6 +31,7 @@
   export default {
     inheritAttrs: false,
     components: { GridLayout },
+    inject: ["work"],
     data() {
       return {
         isLayoutReady: false
@@ -41,6 +43,9 @@
     methods: {
       layoutReadyEvent() {
         this.isLayoutReady = true;
+      },
+      clickSelf(e) {
+        this.work.emit("全局事件-Canvas画板-点击");
       }
     }
   };
