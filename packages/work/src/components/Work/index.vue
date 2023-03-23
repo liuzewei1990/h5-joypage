@@ -69,13 +69,12 @@
     },
     mounted() {
       // this.rowNum = this.$el.clientHeight;
-
-      this.rowHeight = this.$el.clientHeight / this.rowNum;
-      const erd = elementResizeDetectorMaker();
-      erd.listenTo(this.$el, () => {
-        console.log(55544);
-        this.rowHeight = this.$el.clientHeight / this.rowNum;
-      });
+      // this.rowHeight = this.$el.clientHeight / this.rowNum;
+      // const erd = elementResizeDetectorMaker();
+      // erd.listenTo(this.$el, () => {
+      //   console.log(55544);
+      //   this.rowHeight = this.$el.clientHeight / this.rowNum;
+      // });
     },
     methods: {
       clickSelf(e) {
