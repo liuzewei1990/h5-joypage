@@ -1,6 +1,6 @@
 <template>
   <div ref="item" class="vue-grid-item" :class="classObj" :style="cssStyle">
-    <div class="vue-grid-item-content">
+    <div class="vue-grid-item-container" :style="containerStyle">
       <slot></slot>
     </div>
     <!-- {{ isDragging }} -->
@@ -59,10 +59,11 @@
     /* z-index: 3; */
   }
 
-  .vue-grid-item .vue-grid-item-content {
+  .vue-grid-item .vue-grid-item-container {
     position: absolute;
     inset: 0;
     transform: translateZ(9px);
+    overflow: hidden;
   }
 
   .vue-grid-item.actived .border-line {
@@ -237,7 +238,11 @@
              type: Number,
              required: true
              },*/
-
+      containerStyle: {
+        type: Object,
+        required: false,
+        default: () => ({})
+      },
       placeholder: {
         type: Boolean,
         default: false

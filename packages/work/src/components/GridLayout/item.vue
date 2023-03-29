@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-mutating-props -->
 <template>
   <grid-item
-    :style="style"
+    :container-style="style"
     v-bind="$attrs"
     :class="{ 'vue-grid-item-pre': work.mode === 'pre-render' }"
     :id="item.i"
@@ -36,6 +36,8 @@
   import { GridItem } from "@work/vue-grid-layout";
   // import { GridItem } from "vue-grid-layout";
   import { bool, object } from "vue-types";
+  import { WorkComponentStyleClass } from "../../class/work.class";
+
   export default {
     inheritAttrs: false,
     components: { GridItem },
@@ -44,18 +46,14 @@
       item: object().def({})
     },
     computed: {
+      // 将elStyle样式数据转换成css需要的px单位
       style() {
-        const style = {};
-        style["padding"] = "0px";
-        // style["boxSizing"] = "border-box";
-        // this.fixedHeight && (style["height"] = "100vh !important");
-        // this.fixedHeight && (style["height"] = "800px");
+        const style = WorkComponentStyleClass.transformStylePx(this.item.elStyle);
         return style;
       }
     },
     data() {
       return {
-        loaded: false,
         scope: {
           width: "",
           height: ""
@@ -64,13 +62,11 @@
     },
     mounted() {
       /**
-       * 由于GridItem组件内部的style.width是经过多次异步更新计算的结果
-       * 所以这里直接创建一个宏任务来拿到最新的值，再初始化work中的组件，将width和height传递进去
+       * 1.解决编辑时存量数据信息
+       * 2.解决线上时存量数据配置
+       * 3.解决WorkComponentStyleClass类新增配置字段同步
        */
-      setTimeout(() => {
-        // this.initWH();
-        this.loaded = true;
-      }, 0);
+      this.$set(this.item, "elStyle", { ...new WorkComponentStyleClass(), ...this.item.elStyle });
     },
     methods: {
       clickSelf(e) {
@@ -113,7 +109,7 @@
   .vue-grid-item:not(.vue-grid-placeholder) {
     position: relative;
     touch-action: none;
-    background: #edf0f8; // 暂时写死 以后改成配置
+    // background: #edf0f8; // 暂时写死 以后改成配置
     // overflow: hidden;
     // box-shadow: 0px 0px 3px rgb(229, 229, 229);
 

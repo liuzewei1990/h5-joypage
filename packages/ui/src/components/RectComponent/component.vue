@@ -10,7 +10,7 @@
   .component-container {
     position: absolute;
     inset: 0;
-    background: #fff;
+    // background: #fff;
     min-height: 200px;
   }
 </style>

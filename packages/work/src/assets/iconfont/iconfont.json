@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1727421",
+      "name": "205设置-线性",
+      "font_class": "shezhi-xianxing",
+      "unicode": "e8b7",
+      "unicode_decimal": 59575
+    },
+    {
+      "icon_id": "9234832",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
       "icon_id": "14445364",
       "name": "锁",
       "font_class": "suo",

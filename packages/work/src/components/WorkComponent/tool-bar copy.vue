@@ -5,28 +5,16 @@
       <a-tooltip placement="right" title="锁定位置">
         <span class="btn iconfont icon-suo" @click="lock" :class="{ active: item.static }"></span>
       </a-tooltip>
-
       <a-tooltip placement="right" title="浮动" v-if="!item.isDerailed">
         <span class="btn iconfont icon-caidancengji" @click="clickDerailed(true)"></span>
       </a-tooltip>
       <a-tooltip placement="right" title="取消浮动" v-else>
         <span class="btn iconfont icon-caidancengji" :class="{ active: item.isDerailed }" @click="clickDerailed(false)"></span>
       </a-tooltip>
-
-      <a-popover class="my-popover" title="组件容器设置" placement="right" trigger="click" arrow-point-at-center>
-        <popover-setting-style :item="item" slot="content" :style-config="elStyle"></popover-setting-style>
-        <a-tooltip placement="right" title="组件容器设置">
-          <span class="btn iconfont icon-shezhi-xianxing"></span>
-        </a-tooltip>
-      </a-popover>
-
-      <!-- <a-tooltip placement="right" title="编辑组件属性">
-        <span class="btn iconfont icon-bianji"></span>
-      </a-tooltip> -->
-      <a-tooltip placement="right" title="上移一级">
+      <a-tooltip placement="right" title="上移一层">
         <span class="btn iconfont icon-dashujukeshihuaico-1" @click="zIndex('++')"></span>
       </a-tooltip>
-      <a-tooltip placement="right" title="下移一级">
+      <a-tooltip placement="right" title="下移一层">
         <span class="btn iconfont icon-dashujukeshihuaico-" @click="zIndex('--')"></span>
       </a-tooltip>
       <a-tooltip placement="right" title="移除组件">
@@ -48,9 +36,7 @@
 
 <script>
   import { bool, number, object } from "vue-types";
-  import PopoverSettingStyle from "./base/popover-setting-style.vue";
   export default {
-    components: { PopoverSettingStyle },
     inject: ["work"],
     props: {
       item: object().def({}),
@@ -62,9 +48,6 @@
       },
       isFrontier() {
         return this.item.x + this.item.w > 141 ? (this.item.x < 3 ? "lt-0" : "rt") : "lt";
-      },
-      elStyle() {
-        return this.item.elStyle;
       }
     },
     mounted() {},
@@ -110,13 +93,10 @@
     transition: transform 0.3s;
     .group {
       // border-bottom: 1px solid red;
-      background: #ffffff;
-      margin-bottom: 5px;
-      border-radius: 4px;
-      box-shadow: 0px 0px 5px #cbcbcb;
+      background: #1890ff;
+      margin-bottom: 2px;
+      border-radius: 2px;
       padding: 3px 0;
-      // border: 1px solid red;
-      padding: 5px;
 
       // a {
       //   display: inline-block;
@@ -126,19 +106,16 @@
 
     .btn {
       display: block;
-      color: #4a4a4a;
+      color: #fff;
       // border: 1px solid red;
-      margin: 4px 1px;
+      margin: 1px 1px;
       position: relative;
-      // width: 22px;
-      // height: 22px;
+      width: 22px;
+      height: 22px;
       text-align: center;
       line-height: 22px;
       transition: transform 0.2s ease;
       font-size: 20px;
-      border: 1px solid #d4d4d4;
-      padding: 0px 3px;
-      border-radius: 3px;
       span {
       }
       &:hover {
@@ -158,16 +135,14 @@
       // }
     }
     .btn.active {
-      color: #e74f09;
+      color: #ffef38;
       // outline: 1px solid #ffed00;
       outline-offset: -2px;
-      border: 1px solid #e74f09;
     }
   }
-
   .lt {
     transform: translateX(100%);
-    right: -1px;
+    right: -0px;
     // left: 100%;
   }
   .lt-0 {
@@ -175,7 +150,7 @@
   }
   .rt {
     transform: translateX(-100%);
-    left: -1px;
+    left: -0px;
     // left: -24px;
   }
 </style>

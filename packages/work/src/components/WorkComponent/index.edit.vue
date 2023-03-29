@@ -32,6 +32,12 @@
         this.closeEdit();
       }
     },
+    provide() {
+      return {
+        // 子组件可通过 _editorDataCache 缓存需要的数据
+        _EditorDataCache: this.editorDataCache
+      };
+    },
     inject: ["work"],
     props: {
       item: object().def({}),
@@ -39,6 +45,8 @@
     },
     data() {
       return {
+        // 当前组件编辑状态的数据缓存
+        editorDataCache: { q: 11 },
         observerData: {}
       };
     },
@@ -48,6 +56,12 @@
           this.$set(this.item, "coProps", this.observerData);
         },
         deep: true
+      },
+      editorDataCache: {
+        deep: true,
+        handler() {
+          // console.log("_editorDataCache变化!");
+        }
       }
     },
     methods: {

@@ -19,7 +19,7 @@
     /* transform-style: preserve-3d; 处理子集层级问题 */
     transform-style: preserve-3d;
     transition: height 200ms ease;
-    background: #f1f1f1;
+    /* background: #f1f1f1; */
   }
 </style>
 <script>
@@ -156,6 +156,9 @@
       self.eventBus.$on("dragEvent", self.dragEventHandler);
       self.eventBus.$on("verticalCompact", self.verticalCompactHandler);
       self.$emit("layout-created", self.layout);
+
+      // 将 实例存入window中 方便其他组件调用更新
+      window.VueGridLayout = this;
     },
     beforeDestroy: function () {
       //Remove listeners
