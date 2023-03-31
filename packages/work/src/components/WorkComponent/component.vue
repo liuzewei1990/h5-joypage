@@ -28,13 +28,16 @@
     inject: ["work"],
     provide() {
       const workApi = {
-        state: this.work.state,
+        // state: this.work.state,
         setWorkView: (...args) => this.work.setWorkView(...args),
         on: (...args) => this.work.on(...args),
         off: (...args) => this.work.off(...args),
         emit: (...args) => this.work.emit(...args)
       };
-
+      // 为了state的安全性 只有指定的组件可提供注入state数据使用
+      if (["WorkTabs"].indexOf(this.coName) !== -1) {
+        workApi["state"] = this.work.state;
+      }
       return { work: workApi };
     },
     props: {
@@ -63,10 +66,11 @@
     created() {},
     methods: {
       onBeforeCreate() {
+        this.$emit("onBeforeCreate", this.$children[0]);
         // 给业务组件自动注入__observerData props
-        if (this.$children[0] && this.$children[0].$options.props) {
-          this.$children[0].$options.props["__observerData"] = object().def({});
-        }
+        // if (this.$children[0] && this.$children[0].$options.props) {
+        //   this.$children[0].$options.props["__observerData__"] = object().def({});
+        // }
       },
       onCreated() {},
       onMounted() {

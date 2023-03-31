@@ -74,3 +74,26 @@ export const guid = function guid(templateStr = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxx
     return v.toString(16);
   });
 };
+
+/**
+ * 两个对象深度合并
+ * @param {Object} target 目标对象
+ * @param {Object} source 要合并的对象
+ * @returns 新对象
+ */
+export const deepMerge = (target, source) => {
+  if (typeof target !== "object" || typeof source !== "object") {
+    return source;
+  }
+
+  // 将 source 的键合并到 target 上
+  Object.keys(source).forEach((key) => {
+    if (!target[key]) {
+      target[key] = source[key];
+    } else {
+      target[key] = deepMerge(target[key], source[key]);
+    }
+  });
+
+  return target;
+};

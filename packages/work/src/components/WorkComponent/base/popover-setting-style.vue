@@ -6,7 +6,7 @@
       <!-- <a-form-model-item class="work-popover-form-item" label="">
         <number-input-scale title="位置信息" :showScale="false" v-model="position" :scale.sync="elStyle.mar_s"></number-input-scale>
       </a-form-model-item> -->
-      <a-form-model-item v-if="item.isDerailed === false" class="work-popover-form-item" label="">
+      <a-form-model-item v-if="!item.isDerailed" class="work-popover-form-item" label="">
         <number-input-scale title="网格位置" input-tag="a-input" :showScale="false" v-model="gridPosition" :scale.sync="elStyle.mar_s">
           <span slot="header" style="margin-right: 10px">列数:144</span>
           <span slot="header">行数:无限</span>

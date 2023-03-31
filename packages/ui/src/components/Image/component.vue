@@ -7,28 +7,25 @@
       <p class="ant-upload-drag-icon">
         <a-icon type="inbox" />
       </p>
-      <p class="ant-upload-text">Click or drag file to this area to upload</p>
-      <p class="ant-upload-hint">Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
+      <p class="ant-upload-text">拖动图片到此区域上传</p>
     </a-upload-dragger>
   </work-component-wrap>
 </template>
 
 <script>
   import { array, object, string } from "vue-types";
-  import attr from "./attr.js";
   export default {
+    inject: ["__PropsData__"],
     props: {
       imgSrc: string().def(""),
       imgData: object().def({}),
       imgList: array().def([])
     },
-    computed: {
-      ...attr.mapProps({ src11: "imgSrc" })
-    },
     methods: {
       handleChange(e) {
-        console.log(e);
-        this.src11 = window.URL.createObjectURL(e.file.originFileObj);
+        if (e.file.status === "done") {
+          this.__PropsData__.imgSrc = e.file.response.src;
+        }
       }
     }
   };

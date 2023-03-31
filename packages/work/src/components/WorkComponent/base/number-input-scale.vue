@@ -17,7 +17,7 @@
     <div flex="cross:center" class="input-row" style="margin-top: -10px">
       <!-- 对应数组下标0 -->
       <div flex="dir:top cross:center" v-for="item in numberList" :key="item.title">
-        <span class="title">{{ titleMap[item.title] }}</span>
+        <span class="title">{{ titleMap[item.title] || item.title }}</span>
         <component :is="inputTag" type="number" class="my-input" v-model="item.val" :disabled="item.disabled" style="width: 50px; margin: 0 5px 0 0" size="small" :min="min" :max="max"></component>
       </div>
     </div>
